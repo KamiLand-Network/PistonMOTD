@@ -42,7 +42,7 @@ public class PistonMOTDBungee extends Plugin implements PistonMOTDPlatform {
     startup("Registering command");
     getProxy().getPluginManager().registerCommand(this, new BungeeCommand(plugin));
 
-    plugin.checkUpdate();
+    if (plugin.getConfig().isUpdateChecking()) plugin.checkUpdate();
 
     startup("Loading metrics");
     new Metrics(this, 8968);
