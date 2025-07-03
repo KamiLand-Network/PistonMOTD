@@ -73,9 +73,7 @@ public class PistonMOTDSponge implements PistonMOTDPlatform {
     game.eventManager().registerListeners(container, new PingEvent(new StatusPingHandler(plugin)), MethodHandles.publicLookup());
     game.eventManager().registerListeners(container, new JoinEvent(this), MethodHandles.publicLookup());
 
-    if (plugin.getPluginConfig().isUpdateChecking()) {
-      plugin.checkUpdate();
-    }
+    if (plugin.getPluginConfig().isUpdateChecking()) plugin.checkUpdate();
 
     final Tristate collectionState = this.getEffectiveCollectionState();
     if (collectionState == Tristate.TRUE) {

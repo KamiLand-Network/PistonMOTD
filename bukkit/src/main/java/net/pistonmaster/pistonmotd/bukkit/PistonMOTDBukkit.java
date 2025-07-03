@@ -58,7 +58,7 @@ public class PistonMOTDBukkit extends JavaPlugin implements PistonMOTDPlatform {
     command.setTabCompleter(bukkitCommand);
     command.setExecutor(bukkitCommand);
 
-    plugin.checkUpdate();
+    if (plugin.getConfig().isUpdateChecking()) plugin.checkUpdate();
 
     startup("Loading metrics");
     new Metrics(this, 9100);
